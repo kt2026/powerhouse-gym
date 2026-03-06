@@ -86,19 +86,27 @@ sans:["Orbitron","sans-serif"]
 
 <!-- HERO -->
 
-<section class="min-h-screen flex items-center justify-center text-center px-6">
+<section class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
 
-<div>
+<!-- Background Image with Fade Overlay (Bleed with UI) -->
+<div class="absolute inset-0 z-0">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover opacity-60" alt="Bodybuilder Training">
+<!-- Fade to base background color at the bottom -->
+<div class="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/50 to-dark"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-dark/80"></div>
+</div>
 
-<h1 class="hero-title text-6xl md:text-8xl font-bold mb-6 uppercase" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">
+<div class="relative z-10 max-w-4xl mx-auto mt-16">
+
+<h1 class="hero-title text-6xl md:text-8xl font-bold mb-6 uppercase drop-shadow-xl" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">
 <span class="text-brand">Be</span> Greater
 </h1>
 
-<p class="hero-sub text-gray-400 text-xl mb-10">
+<p class="hero-sub text-gray-300 text-xl md:text-2xl mb-10 drop-shadow-md">
 Build Strength. Transform Your Body.
 </p>
 
-<a href="#pricing" class="bg-brand px-10 py-4 rounded-full font-bold hover:bg-red-700 transition">
+<a href="#pricing" class="inline-block bg-brand px-10 py-4 rounded-full font-bold hover:bg-red-700 transition shadow-[0_0_20px_rgba(230,0,0,0.4)] hover:shadow-[0_0_30px_rgba(230,0,0,0.7)] hover:-translate-y-1">
 Get Started
 </a>
 
@@ -306,36 +314,98 @@ Workout <span class="text-brand">Gallery</span>
 
 <!-- CONTACT -->
 
-<section id="contact" class="max-w-xl mx-auto py-24 px-6 text-center">
-
-<h2 class="section-title text-5xl mb-12 uppercase">
+<section id="contact" class="bg-card py-24">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="section-title text-5xl mb-16 uppercase text-center">
 Contact <span class="text-brand">Us</span>
 </h2>
 
+<div class="grid md:grid-cols-2 gap-12">
+
+<!-- Contact Info -->
+<div class="space-y-8">
+
+<div>
+<h3 class="text-3xl font-bold mb-4 uppercase">Your Next Best Self Starts Here</h3>
+<p class="text-gray-400">
+Tell us about your goals and our team will design a training experience tailored to you.
+</p>
+</div>
+
+<div class="contact-card bg-black border border-gray-800 p-8 rounded-xl space-y-6">
+<div>
+<p class="text-brand text-sm font-bold uppercase tracking-wider mb-1">Address</p>
+<p class="text-gray-300">Powerhouse Elite Gym, Financial District, Hyderabad</p>
+</div>
+<div>
+<p class="text-brand text-sm font-bold uppercase tracking-wider mb-1">Phone</p>
+<a href="tel:+919999000000" class="text-gray-300 hover:text-white transition">+91 9999 000 000</a>
+</div>
+<div>
+<p class="text-brand text-sm font-bold uppercase tracking-wider mb-1">Email</p>
+<a href="mailto:hello@powerhouseelite.fit" class="text-gray-300 hover:text-white transition">hello@powerhouseelite.fit</a>
+</div>
+
+<div class="pt-4">
+<a href="https://wa.me/919999000000" target="_blank" rel="noreferrer" class="inline-block border border-brand text-brand hover:bg-brand hover:text-white px-8 py-3 rounded-full font-bold transition">
+WhatsApp Us
+</a>
+</div>
+</div>
+
+<div class="contact-card rounded-xl overflow-hidden border border-gray-800 h-64 relative">
+<iframe
+title="Powerhouse Elite Gym Location"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6281117303916!2d78.357!3d17.430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e36b8f0001%3A0x0000000000000000!2sFinancial%20District!5e0!3m2!1sen!2sin!4v1700000000000"
+class="absolute inset-0 w-full h-full"
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+</div>
+
+</div>
+
+<!-- Contact Form -->
+<div class="contact-card bg-black border border-gray-800 p-10 rounded-xl h-fit">
+
+<h3 class="text-2xl font-bold mb-8 uppercase">Request Your Free Trial</h3>
+
 <form class="space-y-6">
-
-<input type="text" placeholder="Your Name"
-class="w-full p-4 bg-card border border-gray-800 rounded-lg">
-
-<input type="email" placeholder="Email"
-class="w-full p-4 bg-card border border-gray-800 rounded-lg">
-
-<textarea placeholder="Message"
-class="w-full p-4 bg-card border border-gray-800 rounded-lg"></textarea>
-
-<button class="bg-brand px-10 py-4 rounded-full font-bold">
-Send Message
+<div>
+<label for="name" class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Name</label>
+<input type="text" id="name" name="name" placeholder="John Doe" class="w-full bg-dark border border-gray-800 rounded p-4 text-white focus:outline-none focus:border-brand transition" />
+</div>
+<div>
+<label for="email" class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Email</label>
+<input type="email" id="email" name="email" placeholder="you@example.com" class="w-full bg-dark border border-gray-800 rounded p-4 text-white focus:outline-none focus:border-brand transition" />
+</div>
+<div>
+<label for="phone" class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Phone</label>
+<input type="tel" id="phone" name="phone" placeholder="+91 9999 000 000" class="w-full bg-dark border border-gray-800 rounded p-4 text-white focus:outline-none focus:border-brand transition" />
+</div>
+<div>
+<label for="message" class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Message</label>
+<textarea id="message" name="message" rows="4" placeholder="Tell us about your goals..." class="w-full bg-dark border border-gray-800 rounded p-4 text-white focus:outline-none focus:border-brand transition"></textarea>
+</div>
+<button type="submit" class="bg-brand w-full py-4 rounded-full font-bold hover:bg-red-700 transition uppercase tracking-wide">
+Submit Request
 </button>
-
 </form>
 
+</div>
+
+</div>
+
+</div>
 </section>
 
 <!-- FOOTER -->
 
 <footer class="border-t border-gray-800 py-10 text-center text-gray-500">
 
-<p>© 2026 Powerhouse Gym</p>
+<p>© 2026 CrossFit Gym</p>
 
 </footer>
 
@@ -408,6 +478,4 @@ duration:1
 </script>
 
 </body>
-
 </html>
-
