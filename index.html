@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CrossFit Gym</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+tailwind.config = {
+theme:{
+extend:{
+colors:{
+brand:"#E60000",
+dark:"#0a0a0a",
+card:"#141414"
+},
+fontFamily:{
+display:["Orbitron","sans-serif"],
+sans:["Orbitron","sans-serif"]
+}
+}
+}
+}
+</script>
+
+</head>
+
+<body class="bg-dark text-white scroll-smooth">
+
+<!-- NAVBAR -->
+
+<header class="fixed w-full bg-black/70 backdrop-blur-md z-50 border-b border-gray-800">
+
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+
+<h1 class="text-brand text-2xl font-bold tracking-wider" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.15em;">CROSSFIT</h1>
+
+<!-- Desktop Menu -->
+
+<nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-300">
+
+<a href="#about" class="hover:text-white">About</a>
+<a href="#programs" class="hover:text-white">Programs</a>
+<a href="#trainers" class="hover:text-white">Trainers</a>
+<a href="#pricing" class="hover:text-white">Pricing</a>
+<a href="#gallery" class="hover:text-white">Gallery</a>
+<a href="#contact" class="hover:text-white">Contact</a>
+
+</nav>
+
+<!-- Mobile Button -->
+
+<button id="menuBtn" class="md:hidden text-white text-3xl">
+☰
+</button>
+
+</div>
+
+<!-- Mobile Menu -->
+
+<div id="mobileMenu" class="hidden flex flex-col text-center space-y-6 pb-6 text-gray-300 md:hidden">
+
+<a href="#about">About</a>
+<a href="#programs">Programs</a>
+<a href="#trainers">Trainers</a>
+<a href="#pricing">Pricing</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="min-h-screen flex items-center justify-center text-center px-6">
+
+<div>
+
+<h1 class="hero-title text-6xl md:text-8xl font-bold mb-6 uppercase" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">
+<span class="text-brand">Be</span> Greater
+</h1>
+
+<p class="hero-sub text-gray-400 text-xl mb-10">
+Build Strength. Transform Your Body.
+</p>
+
+<a href="#pricing" class="bg-brand px-10 py-4 rounded-full font-bold hover:bg-red-700 transition">
+Get Started
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="max-w-6xl mx-auto py-24 px-6 text-center">
+
+<h2 class="section-title text-5xl mb-8 uppercase">
+About <span class="text-brand">CrossFit</span>
+</h2>
+
+<p class="text-gray-400 max-w-3xl mx-auto">
+CrossFit is a high intensity fitness training system combining strength,
+cardio and endurance workouts designed to transform your body and mindset.
+</p>
+
+</section>
+
+<!-- PROGRAMS -->
+
+<section id="programs" class="bg-card py-24">
+
+<div class="max-w-7xl mx-auto px-6 text-center">
+
+<h2 class="section-title text-5xl mb-16 uppercase">
+Training <span class="text-brand">Programs</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<div class="program-card bg-black border border-gray-800 p-10 rounded-xl">
+
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+class="rounded mb-5">
+
+<h3 class="text-2xl mb-4 font-bold">Strength Training</h3>
+
+<p class="text-gray-400 text-sm">
+Build muscle and power with professional lifting programs.
+</p>
+
+</div>
+
+<div class="program-card bg-black border border-gray-800 p-10 rounded-xl">
+
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd"
+class="rounded mb-5">
+
+<h3 class="text-2xl mb-4 font-bold">HIIT Workout</h3>
+
+<p class="text-gray-400 text-sm">
+High intensity interval workouts to burn fat fast.
+</p>
+
+</div>
+
+<div class="program-card bg-black border border-gray-800 p-10 rounded-xl">
+
+<img src="https://images.unsplash.com/photo-1550345332-09e3ac987658"
+class="rounded mb-5">
+
+<h3 class="text-2xl mb-4 font-bold">Body Conditioning</h3>
+
+<p class="text-gray-400 text-sm">
+Improve endurance and athletic performance.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TRAINERS -->
+
+<section id="trainers" class="max-w-7xl mx-auto py-24 px-6 text-center">
+
+<h2 class="section-title text-5xl mb-16 uppercase">
+Expert <span class="text-brand">Trainers</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-12">
+
+<div class="trainer-card">
+
+<img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1"
+class="rounded-lg mb-4">
+
+<h3 class="text-xl font-bold">Alex Morgan</h3>
+<p class="text-gray-400 text-sm">Strength Coach</p>
+
+</div>
+
+<div class="trainer-card">
+
+<img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e"
+class="rounded-lg mb-4">
+
+<h3 class="text-xl font-bold">David Lee</h3>
+<p class="text-gray-400 text-sm">HIIT Specialist</p>
+
+</div>
+
+<div class="trainer-card">
+
+<img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba"
+class="rounded-lg mb-4">
+
+<h3 class="text-xl font-bold">Sophia Brown</h3>
+<p class="text-gray-400 text-sm">Fitness Trainer</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing" class="bg-card py-24">
+
+<div class="max-w-7xl mx-auto text-center px-6">
+
+<h2 class="section-title text-5xl mb-16 uppercase">
+Membership <span class="text-brand">Plans</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<div class="price-card border border-gray-800 p-10 rounded-xl">
+
+<h3 class="text-2xl mb-5">Basic</h3>
+<p class="text-4xl text-brand mb-6">₹999</p>
+
+<p class="text-gray-400 mb-6 text-sm">
+Gym equipment access
+</p>
+
+<button class="bg-brand px-6 py-3 rounded-full font-bold">
+Join Now
+</button>
+
+</div>
+
+<div class="price-card border border-gray-800 p-10 rounded-xl">
+
+<h3 class="text-2xl mb-5">Pro</h3>
+<p class="text-4xl text-brand mb-6">₹1999</p>
+
+<p class="text-gray-400 mb-6 text-sm">
+Gym + group classes
+</p>
+
+<button class="bg-brand px-6 py-3 rounded-full font-bold">
+Join Now
+</button>
+
+</div>
+
+<div class="price-card border border-gray-800 p-10 rounded-xl">
+
+<h3 class="text-2xl mb-5">Elite</h3>
+<p class="text-4xl text-brand mb-6">₹2999</p>
+
+<p class="text-gray-400 mb-6 text-sm">
+Personal trainer + all access
+</p>
+
+<button class="bg-brand px-6 py-3 rounded-full font-bold">
+Join Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="max-w-7xl mx-auto py-24 px-6 text-center">
+
+<h2 class="section-title text-5xl mb-16 uppercase">
+Workout <span class="text-brand">Gallery</span>
+</h2>
+
+<div class="grid md:grid-cols-4 gap-4">
+
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" class="rounded">
+<img src="https://images.unsplash.com/photo-1594737625785-c9f7c6f13b63" class="rounded">
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" class="rounded">
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61" class="rounded">
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="max-w-xl mx-auto py-24 px-6 text-center">
+
+<h2 class="section-title text-5xl mb-12 uppercase">
+Contact <span class="text-brand">Us</span>
+</h2>
+
+<form class="space-y-6">
+
+<input type="text" placeholder="Your Name"
+class="w-full p-4 bg-card border border-gray-800 rounded-lg">
+
+<input type="email" placeholder="Email"
+class="w-full p-4 bg-card border border-gray-800 rounded-lg">
+
+<textarea placeholder="Message"
+class="w-full p-4 bg-card border border-gray-800 rounded-lg"></textarea>
+
+<button class="bg-brand px-10 py-4 rounded-full font-bold">
+Send Message
+</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="border-t border-gray-800 py-10 text-center text-gray-500">
+
+<p>© 2026 CrossFit Gym</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* Mobile Menu */
+
+const btn = document.getElementById("menuBtn")
+const menu = document.getElementById("mobileMenu")
+
+btn.onclick = () => {
+menu.classList.toggle("hidden")
+}
+
+/* GSAP Animations */
+
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from(".hero-title",{
+y:80,
+opacity:0,
+duration:1
+})
+
+gsap.from(".hero-sub",{
+y:40,
+opacity:0,
+duration:1,
+delay:.3
+})
+
+gsap.utils.toArray(".section-title").forEach(section=>{
+gsap.from(section,{
+scrollTrigger:section,
+y:60,
+opacity:0,
+duration:1
+})
+})
+
+gsap.utils.toArray(".program-card").forEach(card=>{
+gsap.from(card,{
+scrollTrigger:card,
+y:80,
+opacity:0,
+duration:1
+})
+})
+
+gsap.utils.toArray(".trainer-card").forEach(card=>{
+gsap.from(card,{
+scrollTrigger:card,
+y:80,
+opacity:0,
+duration:1
+})
+})
+
+gsap.utils.toArray(".price-card").forEach(card=>{
+gsap.from(card,{
+scrollTrigger:card,
+scale:.8,
+opacity:0,
+duration:1
+})
+})
+
+</script>
+
+</body>
+</html>
